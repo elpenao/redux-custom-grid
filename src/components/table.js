@@ -25,8 +25,6 @@ export default class Table extends Component {
           filteredRows={this.props.filteredRows}
         />
         <AddRow />
-        <RowModal className='row-modal'/>
-        <MapContainer />
       </div>
     );
   }
