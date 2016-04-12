@@ -7,9 +7,9 @@ import { updateCell, showLookupModal, currentCell, updateFormulaCell, moveToCell
 import { Modal, Glyphicon, Button, Input } from 'react-bootstrap';
 // import { searching } from 'actions/SpaceControls';
 import ContentEditable from 'react-contenteditable';
-import LinkLabel from './CellTypes/LinkLabel';
-import Checkbox from './CellTypes/Checkbox';
-import SelectOptionCell from './CellTypes/SelectOptionCell';
+// import LinkLabel from './CellTypes/LinkLabel';
+// import Checkbox from './CellTypes/Checkbox';
+// import SelectOptionCell from './CellTypes/SelectOptionCell';
 
 
 // const cx = classNames.bind(styles);
@@ -70,29 +70,6 @@ class Cell extends Component {
         return (cell.data.map(function (img, i) {
           return (<img src={img} key={i} className={cx('img-thumb')}/>)
         }))
-      case 'Reference':
-        const labels = cell.data ? cell.data.map((label, i)=> <LinkLabel data={label.data} key={i} />) : <span key='0'></span>
-        return  (
-          <div>
-            <Button bsSize="small" onClick={this.showLookupModal.bind(this,row,rowIdx,cell,cellKey)}><Glyphicon glyph="plus" /></Button>
-            {labels}
-          </div>
-        )
-      case 'Checkbox':
-          return (
-						<div className={cx('checkboxCheck')}>
-							<Checkbox dispatch={this.props.dispatch} cell={cell} cellKey={cellKey} rowIdx={rowIdx} row={row}/>
-						</div>
-					)
-      case 'Select':
-          return (<SelectOptionCell
-              dispatch={this.props.dispatch}
-              cell={cell}
-              cellKey={cellKey}
-              rowIdx={rowIdx}
-              row={row}
-              />
-            )
       case 'Link':
 						return (<ContentEditable
 							className={cx('cellContent', 'cellLink')}
@@ -105,7 +82,6 @@ class Cell extends Component {
 							onMouseEnter={this.setMouseEnter} // handle innerHTML change
 							onMouseLeave={this.setMouseLeave} // handle innerHTML change
 					/>)
-      case 'Number':
       default:
           return (<ContentEditable
           className={cx('cellContent')}
@@ -156,7 +132,6 @@ class Cell extends Component {
         ref={(c) => {
           if(this.props.cell.focused && c) c.focus();
         }}
-        // IF this focused = true we are still running onFocus?
         >
         {this.cell(cell,cellKey,row,rowIdx)}
       </div>

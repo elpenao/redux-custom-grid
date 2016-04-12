@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Cell from './Cell';
+import Cell from './cell';
 // import RowOpener from './RowOpener'
 // import classNames from 'classnames/bind';
 // import styles from 'css/components/table';
