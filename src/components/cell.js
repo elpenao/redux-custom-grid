@@ -1,18 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-// import classNames from 'classnames/bind';
 import { connect } from 'react-redux';
-import { updateCell, showLookupModal, currentCell, updateFormulaCell, moveToCell } from 'actions/index';
-// import styles from 'css/components/table';
+import { updateCell, showLookupModal, currentCell, updateFormulaCell, moveToCell } from '../actions/index';
 import { Modal, Glyphicon, Button, Input } from 'react-bootstrap';
-// import { searching } from 'actions/SpaceControls';
 import ContentEditable from 'react-contenteditable';
-// import LinkLabel from './CellTypes/LinkLabel';
-// import Checkbox from './CellTypes/Checkbox';
-// import SelectOptionCell from './CellTypes/SelectOptionCell';
-
-
-// const cx = classNames.bind(styles);
 
 class Cell extends Component {
 	constructor(props, state){

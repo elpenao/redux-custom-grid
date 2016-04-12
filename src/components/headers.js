@@ -1,22 +1,16 @@
 import React, { Component, PropTypes } from 'react';
-import ColumnOptions from './ColumnOptions';
-import AddColumn from './AddColumn';
-import classNames from 'classnames/bind';
-import styles from 'css/components/table';
-import {Pane,SortablePane} from '../SortablePane';
+import {Pane,SortablePane} from './sortablepane';
 
-const cx = classNames.bind(styles);
 
 function generateColumnOptions (headers) {
   return headers.map((header) => {
       return (
         <Pane
-        className={cx('thead')}
+        className='thead'
         id={header.id}
         key={header.id}
         width={header.width||200}
         height={34}>
-        <ColumnOptions data={header} key={header.id}/>
         </Pane>
       )
   })
@@ -32,9 +26,9 @@ function findAddMargin (headers) {
 const Headers = (props) => {
   
   return (
-      <div className={cx('theaders')}>
-        <div className={cx('topCorner')} />
-        <div className={cx('topCorner')}></div>
+      <div className='theaders'>
+        <div className='topCorner' />
+        <div className='topCorner' ></div>
         <SortablePane
            direction="horizontal"
            margin={0}
@@ -47,9 +41,6 @@ const Headers = (props) => {
            >
             {generateColumnOptions(props.headers)}
         </SortablePane>
-
-
-        <AddColumn margin={findAddMargin(props.headers)}/>
       </div>
     );
 }

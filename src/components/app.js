@@ -5,7 +5,10 @@ import Table from './table'
 export default class App extends Component {
   render() {
     return (
-      <Table />
+    	<div>
+    		<h3>Redux Custom Grid</h3>
+    		<Table />
+    	</div>
     );
   }
 }

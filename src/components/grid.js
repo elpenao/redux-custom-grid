@@ -1,10 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import Cell from './cell';
-// import RowOpener from './RowOpener'
-// import classNames from 'classnames/bind';
-// import styles from 'css/components/table';
-
-// const cx = classNames.bind(styles);
 
 const Grid = (props) => {
 
@@ -34,7 +29,7 @@ const Grid = (props) => {
   }
 
   return (
-    <div className='trows'}>
+    <div className='trows'>
       {generateRows(props.grid ? props.grid : [], props.filteredRows ? props.filteredRows : [])}
     </div>
   );

@@ -1,14 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Headers from './Headers';
 import Grid from './Grid';
-// import RowModal from './RowModal';
-import AddRow from './AddRow';
-// import MapContainer from 'containers/MapContainer';
-// import classNames from 'classnames/bind';
-// import styles from 'css/components/table';
-
-
-// const cx = classNames.bind(styles);
 
 
 export default class Table extends Component {
@@ -24,7 +16,6 @@ export default class Table extends Component {
           disableAll={this.props.disableAll} searching={this.props.searching}
           filteredRows={this.props.filteredRows}
         />
-        <AddRow />
       </div>
     );
   }
