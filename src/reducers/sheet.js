@@ -1,4 +1,4 @@
-import { Map, List} from 'immutable';
+import { Map, List, fromJS } from 'immutable';
 import {
   // set changed to true
   UPDATE_CELL,
