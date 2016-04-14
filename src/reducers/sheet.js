@@ -42,11 +42,13 @@ import {
   newColInfo
 } from './sheetHelpers.js';
 
-export default function sheet(state = Map({
+const initialState = Map({
   grid: [],
-  columnHeaders: [],
+  columnHeaders: [{ type: 'ID', name: 'Record Name', id: '100'}],
   showRowModal: false,
-  modalRow: {data:null,rowIdx:null} }), action = {}) {
+  modalRow: {data:null,rowIdx:null} })
+
+export default function sheet(state = initialState, action = {}) {
   switch (action.type) {
     case CLEAR_SHEET:
       return Map({})

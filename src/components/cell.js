@@ -59,11 +59,11 @@ class Cell extends Component {
       case 'Images':
         cell.data = cell.data || [];
         return (cell.data.map(function (img, i) {
-          return (<img src={img} key={i} className={cx('img-thumb')}/>)
+          return (<img src={img} key={i} className='img-thumb'/>)
         }))
       case 'Link':
 						return (<ContentEditable
-							className={cx('cellContent', 'cellLink')}
+							className='cellContent cellLink'
 							html={cell.data} // innerHTML of the editable div
 							tagName='a'
 							disabled={this.state.disabled || this.props.disableAll}       // use true to disable edition
@@ -75,7 +75,7 @@ class Cell extends Component {
 					/>)
       default:
           return (<ContentEditable
-          className={cx('cellContent')}
+          className='cellContent'
           html={cell.data} // innerHTML of the editable div
           disabled={this.state.disabled || this.props.disableAll}       // use true to disable edition
           onChange={this.handleChange} // handle innerHTML change
@@ -114,7 +114,7 @@ class Cell extends Component {
 
     return (
       <div tabIndex='-1'
-				className={cell.type === 'Link' && cell.data ? cx('cell', 'cellLink') : cx('cell')}
+				className={cell.type === 'Link' && cell.data ? 'cell cellLink' : 'cell'}
 				style={{width: this.props.cell.width}}
 				id={''+this.props.cellKey+this.props.rowIdx}
         onDoubleClick={this.editable} // allow for cell editing after focus
