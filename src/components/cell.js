@@ -135,7 +135,6 @@ class Cell extends Component {
       return this.props.cell.focused === nextProps.cell.focused;
     }
 
-
     for (let keys in nextProps.cell) {
       if (nextProps.cell[keys] !== this.props.cell[keys]) {
         return true
