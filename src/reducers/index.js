@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import sheet from 'reducers/sheet';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  sheet
 });
 
 export default rootReducer;
