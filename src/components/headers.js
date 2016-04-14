@@ -1,16 +1,19 @@
 import React, { Component, PropTypes } from 'react';
 import {Pane,SortablePane} from './sortablepane';
+// import ColumnOptions from './columnOptions';
 
 
 function generateColumnOptions (headers) {
   return headers.map((header) => {
       return (
         <Pane
-        className='thead'
-        id={header.id}
-        key={header.id}
-        width={header.width||200}
-        height={34}>
+          className='thead'
+          id={header.id}
+          key={header.id}
+          width={header.width||200}
+          height={34}
+        >
+        <div>{header.name}</div>
         </Pane>
       )
   })
