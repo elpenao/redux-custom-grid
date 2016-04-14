@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import sheet from 'reducers/sheet';
+import sheet from './sheet';
 
 const rootReducer = combineReducers({
   sheet

@@ -149,6 +149,12 @@ class SortablePane extends Component {
   setSize() {
     const panes = this.props.children.map((child, i) => {
       const { width, height } = this.refs.panes.children[i].getBoundingClientRect();
+      console.log({
+        id: child.props.id,
+        width,
+        height,
+        order: i,
+      })
       return {
         id: child.props.id,
         width,
