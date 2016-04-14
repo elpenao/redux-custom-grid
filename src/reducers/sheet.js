@@ -34,7 +34,7 @@ import {
   HIDE_MAP,
   DRAG_TABLE_COL,
   SEND_LAT_LONGS
-} from 'constants/index';
+} from '../actions/constants';
 import {
   insertNewColInRows,
   runCustomFunc,
@@ -57,8 +57,6 @@ export default function sheet(state = Map({
             row[cell].focused = false;
           }
         })
-
-
 
         const newGridToSet = action.sheet.grid ? fromJS(action.sheet.grid) : List()
 
