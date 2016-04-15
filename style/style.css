@@ -1,0 +1,260 @@
+/*@value columnMinWidth: 135px;
+@value primary-color, dark-primary-color, light-primary-color, accent-color from '../common/colors.css';
+*/
+.table {
+    display: block;
+    /*position: relative;*/
+    width: 100%;
+    min-width: 1000px;
+    min-height: 500px;
+    height: inherit;
+    overflow-y: scroll;
+}
+
+.typeDropdown {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 0;
+}
+
+.editNameAndType {
+  z-index: 99;
+  padding: 10px;
+  width: 250px;
+  position: absolute;
+  background: #d1d1d1;
+  border-bottom: 1px solid #d1d1d1;
+  border-top: 1px solid transparent;
+  border-left: 1px solid #dde1e3;
+  border-top: 1px solid #dde1e3;
+}
+
+.editNameAndType button {
+    margin:5px;
+}
+
+.dropdown {
+  border-radius: 0px;
+  background-color: red;
+}
+
+.dropdown-toggle {
+    border-radius: 0px;
+    background-color: red;
+    border-color: red;
+}
+
+.columnCarrat {
+    float: right;
+}
+
+.columnType {
+  float: left
+}
+
+.columnWidth {
+  min-width: 135px;
+  width: 100%;
+}
+
+.addColumn {
+  width: 53px;
+  display: inline-block;
+  float: right;
+  background: #fff;
+  /*border-right: 1px solid #dde1e3;
+  border-bottom: 1px solid #d1d1d1;*/
+  /*border: 1px solid #d1d1d1;*/
+  border-radius: 0;
+  height: 34px;
+}
+
+.addRow {
+  width: 53px;
+  display: block;
+  background: #fff;
+  border: 1px solid #dde1e3;
+  border-radius: 0;
+  height: 34px;
+  margin-bottom: 40px;
+}
+
+.theaders {
+    /*position: absolute;*/
+    top: 115;
+    left: 0;
+    display: inline-flex;
+    background: #fff;
+    border-bottom: 1px solid #d1d1d1;
+    border-top: 1px solid #d1d1d1;
+
+    /*position: fixed;
+    overflow: scroll;*/
+
+}
+
+.thead {
+    min-width: 135px;
+    width: 100%;
+    display: inline;
+    background: #fff;
+    border-right: 1px solid #dde1e3;
+    border-bottom: 1px solid #d1d1d1;
+    border-radius: 0;
+    height: 34px;
+}
+
+.trows {
+    /*position: relative;*/
+    /*margin-top: 35px;*/
+    height: 100%;
+    overflow: scroll;
+    display: block;
+}
+
+.trow {
+
+    display: flex;
+    height: 34px;
+}
+
+.trowHidden {
+    width: 100%;
+    display: none;
+    height: 34px;
+}
+
+.cell {
+    /*width: 200px;*/
+    min-width: 135px;
+    max-height: 40px;
+    padding: 0px;
+    display: inline-block;
+    border-bottom: 1px solid #dde1e3;
+    border-left: 1px solid transparent;
+    border-right: 1px solid #dde1e3;
+    border-top: 1px solid transparent;
+    overflow: hidden;
+}
+
+.cellContent:focus {
+  /*background-color: "";*/
+  overflow: scroll;
+}
+
+.cellContent {
+  height:32px;
+  /*margin: 4px;*/
+  padding-left: 2px;
+  vertical-align: middle;
+  line-height: 32px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  /*flex-direction:column;*/
+}
+
+.cellLink {
+  cursor: hand;
+  cursor: pointer;
+}
+
+.cellContent::-webkit-scrollbar {
+  display: none;
+}
+
+.cell:focus {
+  z-index: 100;
+  overflow: scroll;
+}
+
+.cellCheckBox {
+  position: absolute;
+  margin-left: 50px;
+  width: 100%;
+  height: 25px;
+  margin-top: -10px;
+}
+
+.checkbox {
+  margin-top: -10px;
+}
+
+.checkboxCheck {
+  margin-top: -11px !important;
+}
+
+.cellSelect {
+  /*background: light-primary-color;*/
+  background-color: rgba(100, 100, 100, .15);
+  text-align: center;
+  width: 90%;
+  height: 95%;
+  margin: 3% auto 2% auto;
+
+}
+
+.cell-expand {
+    float: left;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 12px;
+    width: 23px;
+    height: 23px;
+    opacity: 0;
+}
+
+.row-opener {
+  border-bottom: 1px solid #dde1e3;
+  border-right: 1px solid #dde1e3;
+}
+
+.cell-expand:hover {
+    opacity: 1;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.rnum {
+    padding: 5px;
+    /*padding-right: 20px;*/
+    width: 25px;
+    text-align: center;
+    display: inline-block;
+    border-bottom: 1px solid #dde1e3;
+    overflow: scroll;
+}
+
+.topCorner {
+
+  /*padding-right: 20px;*/
+  width: 27px;
+  text-align: center;
+  display: inline-block;
+
+
+}
+
+#dropdown-Names {
+    border-radius: 0px;
+}
+
+.img-thumb {
+    margin: 2px;
+    width: 25px;
+    height: 25px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.3);
+    border-radius: 4px;
+    margin-right: 7px;
+    vertical-align: midde;
+}
+
+.linkLable {
+  font-size: 16px;
+}
+
+.removeFunction{
+  border-radius: 5px;
+  float: right;
+}
+
