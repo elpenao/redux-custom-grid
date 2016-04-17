@@ -31,7 +31,6 @@ const Headers = (props) => {
   return (
       <div className='theaders'>
         <div className='topCorner' />
-        <div className='topCorner' ></div>
         <SortablePane
            direction="horizontal"
            margin={0}

@@ -59,6 +59,7 @@ class gridContainer extends Component {
         filteredRows={this.props.filteredRows}
         resizeCol={this.resizeCol}
         dragCol={this.dragCol}
+        style={{display: 'inline-block'}}
       />
     );
   }

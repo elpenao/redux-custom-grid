@@ -12,8 +12,8 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 const logger = createLogger();
 
 const initialState = {sheet: {
-  grid: [{'100': {type: 'ID', width: 200, id: '100', data: "hi"}}],
-  columnHeaders: [{ type: 'ID', name: 'Record Name', id: '100'}],
+  grid: [{'100': {type: 'ID', width: 200, id: '100', data: "hi"}, '101': {type: 'Text', width: 200, id: '101', data: "hello"}},{'100': {type: 'ID', width: 200, id: '102', data: "it"}, '101': {type: 'Text', width: 200, id: '103', data: "me"}}],
+  columnHeaders: [{ type: 'ID', name: 'Record Name', id: '100'},{ type: 'Text', name: 'Text', id: '101'}],
   showRowModal: false,
   modalRow: {data:null,rowIdx:null} }}
 
