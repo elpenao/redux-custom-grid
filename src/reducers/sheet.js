@@ -42,7 +42,7 @@ import {
   newColInfo
 } from './sheetHelpers.js';
 
-const initialState = Map({
+const initialState = fromJS({
   grid: [],
   columnHeaders: [{ type: 'ID', name: 'Record Name', id: '100'}],
   showRowModal: false,
