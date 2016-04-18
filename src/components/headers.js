@@ -4,17 +4,11 @@ import {Pane,SortablePane} from './sortablepane';
 
 
 function generateColumnOptions (headers) {
-  return headers.map((header) => {
+  return headers.map((header, i) => {
       return (
-        <Pane
-          className='thead'
-          id={header.id}
-          key={header.id}
-          width={header.width||200}
-          height={34}
-        >
-        <div>{header.name}</div>
-        </Pane>
+        <div className='cell' style={{width: 200}} key={i}>
+        {header.name}
+        </div>
       )
   })
 }
@@ -31,18 +25,7 @@ const Headers = (props) => {
   return (
       <div className='theaders'>
         <div className='topCorner' />
-        <SortablePane
-           direction="horizontal"
-           margin={0}
-           disableEffect={true}
-           onResize={(id, dir, size, rect) => props.resizeCol(id)}
-           onOrderChange={(oldPanes,newPanes) => {
-            //  let bounced=_.debounce(() => props.dragCol(newPanes),500);
-            //  bounced();
-           }}
-           >
-            {generateColumnOptions(props.headers)}
-        </SortablePane>
+        {generateColumnOptions(props.headers)}
       </div>
     );
 }

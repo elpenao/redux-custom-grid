@@ -95,9 +95,7 @@ class Cell extends Component {
 	}
 
 	handleCell() {
-
     if(!this.props.cell.focused) this.props.dispatch(currentCell(this.props));
-		// this.props.searching ? this.props.dispatch(searching(false)) : null;
 	}
 
  keyPress (evt) {
@@ -114,7 +112,7 @@ class Cell extends Component {
 
     return (
       <div tabIndex='-1'
-				className={cell.type === 'Link' && cell.data ? 'cell cellLink' : 'cell'}
+				className='cell'
 				style={{width: this.props.cell.width}}
 				id={''+this.props.cellKey+this.props.rowIdx}
         onDoubleClick={this.editable} // allow for cell editing after focus
