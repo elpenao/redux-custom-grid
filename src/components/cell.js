@@ -18,27 +18,13 @@ class Cell extends Component {
     this.cell = this.cell.bind(this);
     this.editable = this.editable.bind(this);
     this.keyPress = this.keyPress.bind(this);
-    this.showLookupModal = this.showLookupModal.bind(this);
-		this.handleLink = this.handleLink.bind(this);
 	}
 
 
 	handleChange(evt){
 	  const { dispatch, cellKey, rowIdx, row } = this.props;
-
-    let recalculateCells = []
-    for (let cell in row) {
-      if (row[cell].type === 'Formula') {
-        row[cell].col = cell;
-        recalculateCells.push(row[cell]);
-      }
-    }
-    dispatch(updateCell(evt.target.value, cellKey, rowIdx, null, recalculateCells));
+    dispatch(updateCell(evt.target.value, cellKey, rowIdx, null, null));
 	}
-
-  showLookupModal(row,rowIdx,cell,cellKey){
-    this.props.dispatch(showLookupModal(row,rowIdx,cell,cellKey))
-  }
 
   editable (evt) {
     this.setState({disabled: false});
@@ -46,33 +32,8 @@ class Cell extends Component {
     else evt.target.focus();
   }
 
-	handleLink(e) {
-		e.preventDefault()
-		if(window) {
-			window.open(this.props.cell.data, '_blank').focus()
-		}
-  }
-
   cell(cell, cellKey, row, rowIdx, cellIdx){
-    // type of cells are defined in MenuEditCol Component
     switch (cell.type) {
-      case 'Images':
-        cell.data = cell.data || [];
-        return (cell.data.map(function (img, i) {
-          return (<img src={img} key={i} className='img-thumb'/>)
-        }))
-      case 'Link':
-						return (<ContentEditable
-							className='cellContent cellLink'
-							html={cell.data} // innerHTML of the editable div
-							tagName='a'
-							disabled={this.state.disabled || this.props.disableAll}       // use true to disable edition
-							onChange={this.handleChange} // handle innerHTML change
-							onDoubleClick={this.editable} // allow for cell editing after focus
-							onContextMenu={this.handleLink}
-							onMouseEnter={this.setMouseEnter} // handle innerHTML change
-							onMouseLeave={this.setMouseLeave} // handle innerHTML change
-					/>)
       default:
           return (<ContentEditable
           className='cellContent'
