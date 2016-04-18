@@ -7,9 +7,6 @@
 .theaders {
     display: flex;
     flex-flow: row nowrap;
-    background: #fff;
-    border-bottom: 1px solid #d1d1d1;
-    border-top: 1px solid #d1d1d1;
 }
 
 .thead {
@@ -24,8 +21,6 @@
 
 .trows {
     width: 100%;
-    /*position: relative;*/
-    /*margin-top: 35px;*/
     height: 100%;
     overflow: scroll;
 }
@@ -88,11 +83,13 @@
     padding: 5px;
     width: 27px;
     text-align: center;
-    border-bottom: 1px solid #dde1e3;
+    border: 1px solid #dde1e3;
+    border-top: none; 
     overflow: scroll;
 }
 
 .topCorner {
     width: 27px;
     height: 33px;
+    border: 1px solid #dde1e3;
 }
