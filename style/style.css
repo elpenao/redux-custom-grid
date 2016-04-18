@@ -7,9 +7,6 @@
 .theaders {
     display: flex;
     flex-flow: row nowrap;
-    background: #fff;
-    border-bottom: 1px solid #d1d1d1;
-    border-top: 1px solid #d1d1d1;
 }
 
 .thead {
@@ -24,8 +21,6 @@
 
 .trows {
     width: 100%;
-    /*position: relative;*/
-    /*margin-top: 35px;*/
     height: 100%;
     overflow: scroll;
 }
@@ -84,40 +79,17 @@
     overflow: scroll;
 }
 
-.cellCheckBox {
-    position: absolute;
-    margin-left: 50px;
-    width: 100%;
-    height: 25px;
-    margin-top: -10px;
-}
-
-.checkbox {
-    margin-top: -10px;
-}
-
-.checkboxCheck {
-    margin-top: -11px !important;
-}
-
-.cellSelect {
-    /*background: light-primary-color;*/
-    background-color: rgba(100, 100, 100, .15);
-    text-align: center;
-    width: 90%;
-    height: 95%;
-    margin: 3% auto 2% auto;
-}
-
 .rnum {
     padding: 5px;
     width: 27px;
     text-align: center;
-    border-bottom: 1px solid #dde1e3;
+    border: 1px solid #dde1e3;
+    border-top: none; 
     overflow: scroll;
 }
 
 .topCorner {
     width: 27px;
     height: 33px;
+    border: 1px solid #dde1e3;
 }
