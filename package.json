@@ -1,9 +1,9 @@
 {
-  "name": "redux-simple-starter",
+  "name": "Redux_Custom_Grid",
   "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description": "Open Source fully featured editable data grid",
   "main": "index.js",
-  "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
+  "repository": "git@github.com:elpenao/redux-custom-grid.git",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
+    "expect": "^1.16.0",
     "immutable": "^3.7.6",
     "lodash": "^3.10.1",
     "lodash.isequal": "^4.1.4",

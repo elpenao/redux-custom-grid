@@ -1,10 +1,10 @@
 import expect from 'expect';
-import md5 from 'spark-md5';
-import reducer from 'reducers/sheet';
+import reducer from '../../src/reducers/sheet';
 import * as types from 'constants';
+import { fromJS } from 'immutable';
 
 describe('Sheets reducer', () => {
-  const initialState = {
+  const initialState = fromJS({
     grid: [{
           '100': {
               type: 'ID',
@@ -18,9 +18,9 @@ describe('Sheets reducer', () => {
       data:null,
       rowIdx:null
     }
-  }
+  })
 
-  const threebyThree = {
+  const threebyThree = fromJS({
     grid: [
         {
           '100': {
@@ -67,14 +67,14 @@ describe('Sheets reducer', () => {
       data:null,
       rowIdx:null
     }
-  }
+  })
 
   it('should handle ADD_COLUMN', () => {
 
     const nextState = reducer(initialState, {type: types.ADD_COLUMN})
 
-    expect(nextState.columnHeaders.length).toEqual(2)
-    expect(nextState.grid[0]['101']).toExist()
+    expect(nextState.get('columnHeaders').size).toEqual(2)
+    expect(nextState.getIn(['grid', '0', '101'])).toExist()
 
   })
 
@@ -92,7 +92,7 @@ describe('Sheets reducer', () => {
   })
 
   it('should handle ADD_ROW for different types', () => {
-    const state = {
+    const state = fromJS({
       grid: [],
       columnHeaders: [
         {id: '100', type: 'ID', name: 'Record Name', idx: 0, width: 200 },
@@ -108,7 +108,7 @@ describe('Sheets reducer', () => {
         data:null,
         rowIdx:null
       }
-    }
+    })
 
     const action = {
       type: types.ADD_ROW
