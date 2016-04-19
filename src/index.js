@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import createLogger from 'redux-logger';
+import { createStore, applyMiddleware, compose } from 'redux';
+// import createLogger from 'redux-logger';
 import { Map } from 'immutable'
 
 import App from './containers/gridContainer';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
-const logger = createLogger();
+// const logger = createLogger();
 
 const initialState = {sheet: {
   grid: [{'100': {type: 'ID', width: 200, id: '100', data: "hi"}, '101': {type: 'Text', width: 200, id: '101', data: "hello"}},{'100': {type: 'ID', width: 200, id: '102', data: "it"}, '101': {type: 'Text', width: 200, id: '103', data: "me"}}],
@@ -19,8 +19,10 @@ const initialState = {sheet: {
 
 const store = createStore(
   reducers, 
-  initialState,
-  applyMiddleware(logger)
+  initialState, compose(
+    applyMiddleware(),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  )
 );
 
 
