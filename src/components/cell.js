@@ -59,7 +59,7 @@ class Cell extends Component {
     if(!this.props.cell.focused) this.props.dispatch(currentCell(this.props));
 	}
 
- keyPress (evt) {
+  keyPress (evt) {
       if (evt.keyCode >= 37 && evt.keyCode <= 40 || evt.keyCode === 13) {
           evt.preventDefault();
           this.props.dispatch(moveToCell(evt.keyCode))

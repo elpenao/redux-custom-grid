@@ -50,17 +50,19 @@ class gridContainer extends Component {
   }
 
   render() {
-    if (!this.props.sheet || !this.props.sheet.grid) return <div>loading ...</div>
     return (
-      <Table
-        grid={this.props.sheet.grid}
-        headers={this.props.sheet.columnHeaders}
-        searching={this.props.searching}
-        filteredRows={this.props.filteredRows}
-        resizeCol={this.resizeCol}
-        dragCol={this.dragCol}
-        style={{display: 'inline-block'}}
-      />
+      <div>
+        <br/>
+        <Table
+          grid={this.props.sheet.grid}
+          headers={this.props.sheet.columnHeaders}
+          searching={this.props.searching}
+          filteredRows={this.props.filteredRows}
+          resizeCol={this.resizeCol}
+          dragCol={this.dragCol}
+          style={{display: 'inline-block'}}
+        />
+      </div>
     );
   }
 }
