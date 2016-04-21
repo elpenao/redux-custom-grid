@@ -33,18 +33,28 @@ class Cell extends Component {
   }
 
   cell(cell, cellKey, row, rowIdx, cellIdx){
-    switch (cell.type) {
-      default:
-          return (<ContentEditable
-          className='cellContent'
-          html={cell.data} // innerHTML of the editable div
-          disabled={this.state.disabled || this.props.disableAll}       // use true to disable edition
-          onChange={this.handleChange} // handle innerHTML change
-          onDoubleClick={this.editable} // allow for cell editing after focus
-          onMouseEnter={this.setMouseEnter} // handle innerHTML change
-          onMouseLeave={this.setMouseLeave} // handle innerHTML change
-        />)
+    if (cell.formatter) {
+      console.log(cell.formatter)
+      let cellContent = React.cloneElement(cell.formatter, cell);
+      let Formatter = cell.formatter
+      cellContent = <Formatter data={cell.data} />;
+      return (
+        <div className='cellContent'>
+          {cellContent}
+        </div>
+      );
     }
+    return (
+      <ContentEditable
+        className='cellContent'
+        html={cell.data} // innerHTML of the editable div
+        disabled={this.state.disabled || this.props.disableAll}       // use true to disable edition
+        onChange={this.handleChange} // handle innerHTML change
+        onDoubleClick={this.editable} // allow for cell editing after focus
+        onMouseEnter={this.setMouseEnter} // handle innerHTML change
+        onMouseLeave={this.setMouseLeave} // handle innerHTML change
+      />
+    )
   }
 
 	setMouseEnter (evt) {
