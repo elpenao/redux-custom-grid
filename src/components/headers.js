@@ -6,8 +6,8 @@ import {Pane,SortablePane} from './sortablepane';
 function generateColumnOptions (headers) {
   return headers.map((header, i) => {
       return (
-        <div className='cell' style={{width: 200}} key={i}>
-        {header.name}
+        <div className='cell cellContent colHead' style={{width: 200}} key={i}>
+          {header.name}
         </div>
       )
   })
