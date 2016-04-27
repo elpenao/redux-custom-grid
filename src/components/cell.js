@@ -34,10 +34,8 @@ class Cell extends Component {
 
   cell(cell, cellKey, row, rowIdx, cellIdx){
     if (cell.formatter) {
-      console.log(cell.formatter)
-      let cellContent = React.cloneElement(cell.formatter, cell);
       let Formatter = cell.formatter
-      cellContent = <Formatter data={cell.data} />;
+      let cellContent = <Formatter data={cell.data} />;
       return (
         <div className='cellContent'>
           {cellContent}
